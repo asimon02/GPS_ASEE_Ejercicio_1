@@ -1,0 +1,19 @@
+name: Saludo
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  saludar-al-usuario:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+      - name: Saludo al usuario
+        run: echo "¡Hola, ${{ github.actor }}! Gracias por hacer push."
+
+      - name: Listar archivos del repositorio
+        run: ls -la
